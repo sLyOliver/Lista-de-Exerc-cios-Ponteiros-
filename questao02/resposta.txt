@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(){
+    int i=5, *p;
+    unsigned char *px;
+p = &i;
+px = px + 4094;//px = 4049
+printf("%x %d %d %d %d", px,*p+2,**&p,3**p,**&p+4);   //  0000FFE 7 5 15 9
+return 0;
+}
