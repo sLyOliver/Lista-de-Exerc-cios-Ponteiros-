@@ -1,0 +1,8 @@
+p = i; 	      // Há problema maso programa ainda será compilado
+q = &j;           // Não é ilegal
+p = &*&i;	      // Não é ilegal
+i = (*&)j;	      // ilegal
+i = *&j;	      // Não é ilegal
+i = *&*&j;	      // Não é ilegal
+q = *p;	      // Há problema mas o programa ainda será compilado
+i = (*p)++ + *q;  // Não é ilegal
