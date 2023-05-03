@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <gc.h>
+
+int main()
+{
+    // Aloca memória para um array de 10 inteiros
+    int* my_array = (int*) GC_MALLOC(10 * sizeof(int));
+
+    // Define os valores dos elementos do array
+    for (int i = 0; i < 10; i++) {
+        my_array[i] = i * 2;
+    }
+
+    // Imprime os valores dos elementos do array
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", my_array[i]);
+    }
+
+    // Libera a memória alocada
+    GC_FREE(my_array);
+
+    return 0;
+}

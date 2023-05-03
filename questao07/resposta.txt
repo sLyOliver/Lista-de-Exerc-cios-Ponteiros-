@@ -1,0 +1,5 @@
+Só as expressões p = mat + 1 e x = (*mat)++ são válidas, as outras expressões com a atribuição de p a mat++ não são válidas. O operador de pós-incremento (++) não pode ser aplicado diretamente a um vetor, e a expressão mat++ não é uma lvalue, ou seja, não é um valor que possa ser atribuído a um ponteiro.
+
+
+
+

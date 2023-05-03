@@ -1,0 +1,1 @@
+A expressão que referencia o valor do terceiro elemento do vetor é `*(pulo + 2)`

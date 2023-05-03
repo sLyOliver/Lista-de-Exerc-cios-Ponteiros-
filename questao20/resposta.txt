@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <gc.h>
+#include <time.h>
+
+#define MEM_SIZE 1000000
+#define ALLOC_SIZE 100
+
+int main()
+{
+    int i, j;
+    int* p[MEM_SIZE];
+    clock_t start_time, end_time;
+    double traditional_time, gc_time;
+
+    // Alocação de memória usando malloc/free
+    start_time = clock();
+    for (i = 0; i < MEM_SIZE; i++) {
+        p[i] = (int*) malloc(ALLOC_SIZE);
+        for (j = 0; j < ALLOC_SIZE; j++) {
+            p[i][j] = i;
+        }
+        free(p[i]);
+    }
+    end_time = clock();
+    traditional_time = (double) (end_time - start_time) / CLOCKS_PER_SEC;
+
+    // Alocação de memória usando libGC
+    GC_INIT();
+    start_time = clock();
+    for (i = 0; i < MEM_SIZE; i++) {
+        p[i] = (int*) GC_MALLOC_ATOMIC(ALLOC_SIZE);
+        for (j = 0; j < ALLOC_SIZE; j++) {
+            p[i][j] = i;
+        }
+    }
+    end_time = clock();
+    gc_time = (double) (end_time - start_time) / CLOCKS_PER_SEC;
+
+    printf("Tempo de alocação/liberação de memória usando malloc/free: %.2f segundos\n", traditional_time);
+    printf("Tempo de alocação de memória usando libGC: %.2f segundos\n", gc_time);
+    printf("Diferença de tempo: %.2f segundos\n", gc_time - traditional_time);
+
+    return 0;
+}

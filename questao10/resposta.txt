@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    char x_c[4];
+    int x_i[4];
+    float x_f[4];
+    double x_d[4];
+    int i;
+
+    printf("Enderecos de memoria com x declarado como char:\n");
+    for (i = 0; i < 4; i++) {
+        printf("%p ", &x_c[i]);
+    }
+    printf("\nEnderecos de memoria com x declarado como int:\n");
+    for (i = 0; i < 4; i++) {
+        printf("%p ", &x_i[i]);
+    }
+    printf("\nEnderecos de memoria com x declarado como float:\n");
+    for (i = 0; i < 4; i++) {
+        printf("%p ", &x_f[i]);
+    }
+    printf("\nEnderecos de memoria com x declarado como double:\n");
+    for (i = 0; i < 4; i++) {
+        printf("%p ", &x_d[i]);
+    }
+
+    return 0;
+}
+
+A saída do programa vai ser:
+
+Enderecos de memoria com x declarado como char:
+0061FF18 0061FF19 0061FF1A 0061FF1B
+Enderecos de memoria com x declarado como int:
+0061FF08 0061FF0C 0061FF10 0061FF14
+Enderecos de memoria com x declarado como float:
+0061FEF8 0061FEFC 0061FF00 0061FF04
+Enderecos de memoria com x declarado como double:
+0061FED8 0061FEE0 0061FEE8 0061FEF0

@@ -1,0 +1,15 @@
+aloha[2] = value; // Comando válido. Atribui o valor da variável value ao terceiro elemento do vetor aloha.
+
+scanf("%f", &aloha); // Comando inválido. A função scanf espera receber um endereço de memória para armazenar o valor lido, mas a variável aloha é um vetor e não pode ser passada como um endereço único.
+
+aloha = value"; // Comando inválido. Há uma aspas dupla no final da string "value" que não deveria estar presente. Além disso, aloha é um vetor e não pode ser atribuído diretamente a um valor.
+
+printf("%f", aloha); // Comando inválido. Aloha é um vetor e não pode ser passado diretamente como um argumento para a função printf. É necessário especificar o elemento do vetor que deseja-se imprimir.
+
+coisas[4][4] = aloha[3]; // Comando válido. Atribui o valor do quarto elemento do vetor aloha ao elemento [4][4] da matriz coisas.
+
+coisas[5] = aloha; // Comando inválido. A variável coisas[5] é uma linha da matriz coisas, que é um vetor de tamanho fixo. Não é possível atribuir a um vetor inteiro a partir de outro vetor, a menos que seja feita uma cópia elemento por elemento.
+
+pf = value; // Comando inválido. pf é um ponteiro para float, e value é uma variável float. Não é possível atribuir diretamente um valor a um ponteiro. É necessário passar o endereço de memória da variável value.
+
+pf = aloha; // Comando válido. Aloha é um vetor de floats, que pode ser interpretado como um ponteiro para o primeiro  elemento do vetor. Portanto, o comando atribui o endereço de memória do primeiro elemento do vetor aloha ao ponteiro pf.

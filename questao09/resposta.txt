@@ -1,0 +1,22 @@
+Se x é declarado como char:
+
+- x+1 aponta para o endereço de memória 4093
+- x+2 aponta para o endereço de memória 4094
+- x+3 aponta para o endereço de memória 4095
+
+Se x é declarado como int:
+- x+1 aponta para o endereço de memória 4094
+- x+2 aponta para o endereço de memória 4096
+- x+3 aponta para o endereço de memória 4098
+
+Se x é declarado como float:
+
+- x+1 aponta para o endereço de memória 4096
+- x+2 aponta para o endereço de memória 4100
+- x+3 aponta para o endereço de memória 4104
+
+Se x é declarado como double:
+
+- x+1 aponta para o endereço de memória 4100
+- x+2 aponta para o endereço de memória 4108
+- x+3 aponta para o endereço de memória 4116
